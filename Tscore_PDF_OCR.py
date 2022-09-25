@@ -16,7 +16,7 @@ def DFS_file_search(dict_name):
     stack = []
     result_txt = []
     stack.append(dict_name)
-    while len(stack) != 0:  #所有目錄是否以搜索完畢
+    while len(stack) != 0:  #所有目錄是否搜索完畢
         temp_name = stack.pop()
         try:
             temp_name2 = os.listdir(temp_name) # list ["","",...]
@@ -83,29 +83,4 @@ print(patient_tscore_dic)
 
 with open('/Users/alyion/Desktop/111 8月OA/DXA/八月tscore.csv', 'w') as f:
     for key in patient_tscore_dic.keys():
-        f.write("%s, %s\n" % (key, patient_tscore_dic[key].replace('\n\n','\n').replace('\n',',')))
-        
-        
-#調整參數區域/Users/alyion/Desktop/111 8月OA/DXA/4m80hr7ipc.dfx00.png
-# pdfID = "4m80hr7ipc"
-# pdf_image("/Users/alyion/Desktop/111 8月OA/DXA/"+pdfID+".dfx00/"+pdfID+".pdf","/Users/alyion/Desktop/",4, 4, 0)
-# png_crop("/Users/alyion/Desktop/"+pdfID+"0","/Users/alyion/Desktop/",pdfID+"0",4, 4)
-# im1 = Image.open("/Users/alyion/Desktop/"+pdfID+"0_name.png")
-# im2 = Image.open("/Users/alyion/Desktop/"+pdfID+"0_score.png")
-# im1 = im1.resize((im1.width//2,im1.height//2))
-# text1 = pytesseract.image_to_string(im1,lang = 'chi_tra')
-# text2 = pytesseract.image_to_string(im2,lang = 'chi_tra')
-# print(text1[0]+text1[3]+text1[4])
-# name = text1[0]+text1[3]+text1[4]
-# if re.search(u'[\u4e00-\u9fff]', name):
-#     name = re.sub('/','', name)
-# else:
-#     name = filename
-# print(text2)
-# score = text2
-    
-    
-    
-    
-    
-    
+        f.write("%s, %s\n" % (key, patient_tscore_dic[key].replace('\n\n','\n').replace('\n',',')))   
